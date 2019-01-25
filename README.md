@@ -1,8 +1,3 @@
-# Kubernetes-database
-Use shell &amp; ansible &amp; k8s script to create postgresql database with configfile , tables ,schemas and users automatically .
-When we want to use one-tenant one-database design , The cost is too high. To reduce the cost , containerization is a good way , but docker cannot afford a stable environment for databases.
-So we can use k8s to manage our databases.
-This repository will tell you how to create ,initialize , manage multi databases in kubernates automatically.
 1.You need a k8s environment and deploy ansible tools. Then upload the postgres yaml file to /etc/ansible/manifests/postgresql/
  postgres yaml:
  apiVersion: apps/v1beta1
