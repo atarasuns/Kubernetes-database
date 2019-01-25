@@ -1,6 +1,6 @@
 Document
 ====
-Use shell ,ansible , k8s script to create postgresql database includeing config files , tables ,schemas and 
+Use shell ,ansible , k8s script to create postgresql database including config files , tables ,schemas and 
 users automatically .
 When we want to use one-tenant one-database design , The cost is too high. To reduce the cost , containerization 
 is a good way , but docker cannot afford a stable environment for databases.
