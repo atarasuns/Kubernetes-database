@@ -1,0 +1,48 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: postgre-database-813
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres-pv-813
+    spec:
+      containers:
+      - name: postgre-container-923
+        image: postgres:10.5
+        ports:
+        - containerPort: 9923
+        volumeMounts:
+        - mountPath: "/var/lib/postgresql/data"
+          name: postgre-c-923
+        - mountPath: "/etc/localtime"
+          name: host-time
+      volumes:
+        - name: postgre-c-923
+          hostPath: 
+            path: /home/data/postgre-database-923
+        - name: host-time
+          hostPath:
+            path: /etc/localtime
+#      nodeSelector:
+#        node: db-gp
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre-service-813
+  labels:
+    app: postgres-pv-813
+spec:
+  type: NodePort
+  ports:
+  - name: postgre-port-923
+    protocol: "TCP"
+    port: 9923
+    nodePort: 20923
+    targetPort: 9923
+  selector:
+    app: postgres-pv-923
