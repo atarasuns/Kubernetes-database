@@ -53,9 +53,11 @@ This repository will tell you how to create ,initialize , manage multi databases
     		nodePort: 20001
     		targetPort: 9001
 
-	2.Create file: /etc/ansible/manifests/postgresql
+2.Create file: /etc/ansible/manifests/postgresql
+
   	mkdir -p /etc/ansible/manifests/postgresql
-	3.Upload your initialize sql file to /etc/ansible/manifests/postgresql and rename to init.sql.
+3.Upload your initialize sql file to /etc/ansible/manifests/postgresql and rename to init.sql.
+
 	Content of init.sql
 	For example:
  	CREATE DATABASE test;
